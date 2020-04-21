@@ -1,0 +1,7 @@
+*.exe
+*.memprof
+bin/*
+swagger
+.idea/*
+.idea
+vendor
