@@ -9,6 +9,7 @@ package routers
 
 import (
 	"github.com/zillani/qudash/controllers"
+	"github.com/zillani/qudash/filters"
 
 	"github.com/astaxie/beego"
 )
@@ -19,6 +20,7 @@ func init() {
 	beego.Router("/ws", &controllers.WebSocketController{})
 	beego.Router("/ws/join", &controllers.WebSocketController{}, "get:Join")
 	beego.Router("/", &controllers.MainController{})
+	beego.InsertFilter("/*", beego.BeforeRouter, filters.LogManager)
 	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/object",
 			beego.NSInclude(
