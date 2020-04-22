@@ -5,3 +5,4 @@ swagger
 .idea/*
 .idea
 vendor
+go.sum

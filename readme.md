@@ -255,3 +255,12 @@ If the whole project goes a mess! then,
 create the api project using bee and copy file one by one 
 from old project to the new project
 ```
+
+#### why go modules & how?
+go modules creates all your deps under `$GOPATH/pkg` just like `.m2` fo maven
+so you will files will index to that location instead of `$GOPATH/src`
+```bash
+go mod init
+go mod downlaod
+go get
+```
