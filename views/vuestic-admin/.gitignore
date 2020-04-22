@@ -1,11 +1,3 @@
-*.exe
-*.memprof
-bin/*
-swagger
-.idea/*
-.idea
-vendor
-go.sum
 .DS_Store
 node_modules
 /dist
@@ -22,6 +14,7 @@ stylelintOutput.log*
 inspect.js
 
 # Editor directories and files
+.idea
 .vscode
 *.suo
 *.ntvs*
