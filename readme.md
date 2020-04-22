@@ -40,6 +40,8 @@
    13. [HTML tags not recognized?](#HTML-tags-not-recognized?)
    14. [Install via docker](#Install-via-docker)
    15. [access-mysql](#access-mysql)
+   16. [Router not loading](#router-not-loading)
+   17. [fixing the mess](#fixing-the-mess)
 
 
 ### Pre-requisites
@@ -239,4 +241,17 @@ For windows users,
 ```bash
 netstat -ano | findstr :8080
 taskkill /PID 20380 /F
+```
+
+#### Routers not loading
+Check if the main method has this, 
+```bash
+	_ "github.com/zillani/qudash/routers"
+```
+
+#### fixing the mess
+If the whole project goes a mess! then,
+```bash
+create the api project using bee and copy file one by one 
+from old project to the new project
 ```

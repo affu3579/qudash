@@ -8,6 +8,8 @@ import (
 )
 
 func main() {
+	fmt.Print("INSIDE MAIN")
+	beego.ErrorController(&controllers.ErrorController{})
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
