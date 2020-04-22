@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  redis:
+    image: redis:alpine
+    container_name: qudash-redis
+    command: redis-server
+    hostname: 192.168.99.100
+    ports:
+      - 6379:6379
+    volumes:
+      - $PWD/resources/redis.conf:/usr/local/etc/redis/redis.conf
+  mysql:
+    image: mysql:8.0
+    container_name: qudash-sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: zshaik
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: qudash
+    ports:
+      - 3306:3306
+    volumes:
+      - $PWD/resources/db/:/docker-entrypoint-initdb.d
+  qudash:
+    build: .
+    container_name: qudash
+    depends_on:
+      - redis
+      - mysql

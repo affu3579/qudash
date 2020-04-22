@@ -52,6 +52,33 @@ func init() {
             Filters: nil,
             Params: nil})
 
+    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:SessionController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:SessionController"],
+        beego.ControllerComments{
+            Method: "Home",
+            Router: `/`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:SessionController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:SessionController"],
+        beego.ControllerComments{
+            Method: "Login",
+            Router: `/`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:SessionController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:SessionController"],
+        beego.ControllerComments{
+            Method: "Logout",
+            Router: `/`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
     beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
         beego.ControllerComments{
             Method: "Post",
@@ -72,17 +99,8 @@ func init() {
 
     beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
         beego.ControllerComments{
-            Method: "Get",
-            Router: `/:uid`,
-            AllowHTTPMethods: []string{"get"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
-        beego.ControllerComments{
             Method: "Put",
-            Router: `/:uid`,
+            Router: `/`,
             AllowHTTPMethods: []string{"put"},
             MethodParams: param.Make(),
             Filters: nil,
@@ -90,27 +108,18 @@ func init() {
 
     beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
         beego.ControllerComments{
+            Method: "Get",
+            Router: `/:id`,
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
+        beego.ControllerComments{
             Method: "Delete",
-            Router: `/:uid`,
+            Router: `/:id`,
             AllowHTTPMethods: []string{"delete"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
-        beego.ControllerComments{
-            Method: "Login",
-            Router: `/login`,
-            AllowHTTPMethods: []string{"get"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/zillani/qudash/controllers:UserController"],
-        beego.ControllerComments{
-            Method: "Logout",
-            Router: `/logout`,
-            AllowHTTPMethods: []string{"get"},
             MethodParams: param.Make(),
             Filters: nil,
             Params: nil})
