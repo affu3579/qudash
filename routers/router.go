@@ -20,6 +20,11 @@ func init() {
 	beego.Router("/ws", &controllers.WebSocketController{})
 	beego.Router("/ws/join", &controllers.WebSocketController{}, "get:Join")
 	beego.Router("/", &controllers.MainController{})
+	beego.Router("/home", &controllers.SessionController{}, "get:Home")
+	beego.Router("/login", &controllers.SessionController{}, "get:Login")
+	beego.Router("/logout", &controllers.SessionController{}, "get:Logout")
+	beego.Router("/dashboard", &controllers.UserController{}, "get:Dashboard")
+	beego.Router("/getFromCache", &controllers.CacheController{}, "get:GetFromCache")
 	beego.InsertFilter("/*", beego.BeforeRouter, filters.LogManager)
 	ns := beego.NewNamespace("/v1",
 		beego.NSNamespace("/object",
